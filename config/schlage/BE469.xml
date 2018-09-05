@@ -123,7 +123,7 @@
 		</Value>
 		<Value type="byte" genre="config" index="16" label="User code pin length" min="4" max="8" value="4">
 			<Help>
-				User Code PIN length, a value between 4 and 8. 
+				User Code PIN length, a value between 4 and 8.
 				IMPORTANT: All user codes must be the same length.
 			</Help>
 		</Value>
@@ -136,15 +136,5 @@
 		<Value type="byte" genre="config" index="18" label="Bootloader Version" read_only="true">
 			<Help>The version of the bootloader</Help>
 		</Value>
-	</CommandClass>
-
-	<CommandClass id="113">
-		<!-- These Door Locks don't send a DoorLockReport when the
-		Lock Status is Changed, but instead send a Alarm Message -
-		So we trigger a Refresh of the DoorLock Command Class when
-		we recieve a Alarm Message Instead -->
-		<TriggerRefreshValue Genre="user" Index="0" Instance="1">
-			<RefreshClassValue CommandClass="98" RequestFlags="0" Index="1" Instance="1" />
-		</TriggerRefreshValue>
 	</CommandClass>
 </Product>
